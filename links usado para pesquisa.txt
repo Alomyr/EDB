@@ -1,0 +1,8 @@
+https://pt.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search
+
+https://panda.ime.usp.br/panda/static/pythonds_pt/05-OrdenacaoBusca/BuscaSequencial.html
+
+https://www.tutorialspoint.com/data_structures_algorithms/jump_search_algorithm.htm
+
+fora videos no youtube que não achei mais explicando como que cada busca
+funciona
