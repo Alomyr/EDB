@@ -19,6 +19,15 @@ Node* build123(){
     return n1;
 }
 
+void pop_front(Node* &H){
+    if(H == nullptr)return;
+
+    Node* target=H;
+    H = H->next;
+    
+    delete target;
+}
+
 size_t length(Node* H) {
     size_t count{0};
     while (H != nullptr) {

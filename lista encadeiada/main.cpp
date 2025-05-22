@@ -8,7 +8,8 @@ int main(){
 
     std::cout << "Lista: ";
     print_list(L);
-
+    pop_front(L);
+    print_list(L);
     std::cout << "Tamanho: " << length(L) << std::endl;
 
 
