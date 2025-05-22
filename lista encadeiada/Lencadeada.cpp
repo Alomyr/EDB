@@ -19,7 +19,39 @@ Node* build123(){
     return n1;
 }
 
-void pop_front(Node* &H){
+Node* get_prev_last(Node* L){
+
+    if(L==nullptr)return nullptr;
+
+    Node* beh =  new Node;
+    beh = nullptr;
+    Node* curr =  new Node;
+    curr = L;
+    Node* front =  new Node;
+    front = L->next;
+
+    while(not(front == nullptr)){
+        beh=curr;
+        curr=front;
+        front = front->next;
+    }
+    return beh;
+}
+
+void pop_back(Node* &H){ //remover ultimo
+
+    if(H == nullptr) return;
+
+    Node* prev = get_prev_last(H);
+    Node* last = prev->next;
+
+    prev->next = nullptr;
+    delete last;
+
+
+}
+
+void pop_front(Node* &H){ //remover o primeiro
     if(H == nullptr)return;
 
     Node* target=H;
@@ -28,6 +60,8 @@ void pop_front(Node* &H){
     delete target;
 }
 
+
+
 size_t length(Node* H) {
     size_t count{0};
     while (H != nullptr) {
@@ -35,6 +69,17 @@ size_t length(Node* H) {
         H = H->next;
     }
     return count;
+}
+
+void pop_at(Node* &H, int idx){
+    if(H == nullptr or idx>length(H) or idx<0) return;
+
+
+
+}
+
+Node* get_prev(Node* L, int idx){
+    if(idx>length(L))return nullptr;
 }
 
 Node* push_front( Node* &H, int v){

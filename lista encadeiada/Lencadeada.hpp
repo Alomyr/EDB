@@ -18,3 +18,6 @@ Node* push_back(Node* &H, int v);
 Node* get_last(Node* L);
 void print_list(Node* H);
 void pop_front(Node* &H);
+void pop_back(Node* &H);
+Node* get_prev_last(Node* L);
+void pop_at(Node* &H, int idx);
