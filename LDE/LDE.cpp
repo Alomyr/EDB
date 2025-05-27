@@ -38,3 +38,20 @@ void print_list(Node * L){
     std::cout<<"-|> Null.\n";
 
 }
+
+void insetionShort(Node* L){
+
+    if(L->next == nullptr or L == nullptr) return;
+
+    Node* o = L->next;
+    
+    while (o->next != nullptr) {
+        Node* d = o->next;
+        Node* t = o;
+        while (t->data > d->data and t->prev!=nullptr) {
+            
+            t = t->prev;
+
+        }
+    }
+}
