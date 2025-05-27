@@ -10,5 +10,6 @@ struct Node {
 };
 
 Node* build123();
+void print_list(Node* L);
 
 #endif
