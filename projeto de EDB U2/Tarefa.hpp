@@ -5,8 +5,8 @@ struct tarefa{
 
     tarefa* next;
     int id;
-    int prioridade;
-    char descricao[100];
+    int priority;
+    char description[100];
 
 };
 class Tarefas {

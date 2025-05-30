@@ -8,63 +8,63 @@ Tarefas::Tarefas() {
     head = nullptr;
 }
 
-void Tarefas::adicionarTarefa(int id, int prioridade, const char* descricao){
+void Tarefas::adicionarTarefa(int id, int priority, const char* descricao){
 
-    tarefa* novatarefa = new tarefa;
-   novatarefa->id = id;
-   novatarefa->prioridade = prioridade;
-   novatarefa->next = nullptr;
+    tarefa* newTask = new tarefa;
+   newTask->id = id;
+   newTask->priority = priority;
+   newTask->next = nullptr;
 
    
-    std::strncpy(novatarefa->descricao, descricao, sizeof(novatarefa->descricao)-1);
-    novatarefa->descricao[sizeof(novatarefa->descricao) - 1] = '\0';
+    std::strncpy(newTask->description, descricao, sizeof(newTask->description)-1);
+    newTask->description[sizeof(newTask->description) - 1] = '\0';
 
     if(head == nullptr){
-        head = novatarefa;
+        head = newTask;
     }else{
-        tarefa* atual= head;
-        while(not(atual->next == nullptr)){
-            atual = atual->next;
+        tarefa* current= head;
+        while(not(current->next == nullptr)){
+            current = current->next;
         }
-        atual->next = novatarefa;
+        current->next = newTask;
     }
 }
 
 void Tarefas::listarTarefas()const{
 
 
-    tarefa* atual = head;
-    while(not(atual == nullptr)){
-        std::cout<<"ID: "<<atual->id<<'\n';
-        std::cout<<"Prioridade: "<<atual->prioridade<<'\n';
-        std::cout<<"Descição: "<<atual->descricao<<'\n';
-        atual = atual->next;
+    tarefa* current = head;
+    while(not(current == nullptr)){
+        std::cout<<"ID: "<<current->id<<'\n';
+        std::cout<<"Prioridade: "<<current->priority<<'\n';
+        std::cout<<"Descição: "<<current->description<<'\n';
+        current = current->next;
     }
 
 }
 
 void Tarefas::removerTarefa(int ID){
 
-    tarefa* atual = head;
-    tarefa* beguin = nullptr;
+    tarefa* current = head;
+    tarefa* prev = nullptr;
 
-    while(not(atual == nullptr) and not(atual->id == ID)){
-        beguin = atual;
-        atual = atual->next;
+    while(not(current == nullptr) and not(current->id == ID)){
+        prev = current;
+        current = current->next;
     }
-    if(atual == nullptr) return;
+    if(current == nullptr) return;
 
-    beguin == nullptr ? head = atual->next : beguin->next = atual->next;
+    prev == nullptr ? head = current->next : prev->next = current->next;
 
-    delete atual;
+    delete current;
 }
 
 Tarefas::~Tarefas(){
     
-    tarefa* atual = head;
-    while(not(atual == nullptr)){
-        tarefa* delet = atual;
-        atual = atual->next;
+    tarefa* current = head;
+    while(not(current == nullptr)){
+        tarefa* delet = current;
+        current = current->next;
         delete delet;
     }
 
