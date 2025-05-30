@@ -3,11 +3,15 @@
 
 struct tarefa{
 
+    tarefa* next;
     int id;
     int prioridade;
     char descricao[100];
+
 };
 class Tarefas {
+    private:
+        tarefa* head;
 
     public:
         Tarefas();
@@ -19,5 +23,7 @@ class Tarefas {
         void buscarTarefa(int id) const;
 
 };
+
+
 
 #endif // TAREFAS_HPP
