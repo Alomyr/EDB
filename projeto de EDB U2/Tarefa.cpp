@@ -43,7 +43,21 @@ void Tarefas::listarTarefas()const{
 
 }
 
+void Tarefas::removerTarefa(int ID){
 
+    tarefa* atual = head;
+    tarefa* beguin = nullptr;
+
+    while(not(atual == nullptr) and not(atual->id == ID)){
+        beguin = atual;
+        atual = atual->next;
+    }
+    if(atual == nullptr) return;
+
+    beguin == nullptr ? head = atual->next : beguin->next = atual->next;
+
+    delete atual;
+}
 
 Tarefas::~Tarefas(){
     
