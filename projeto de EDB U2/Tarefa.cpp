@@ -5,7 +5,7 @@
 
 Tarefas::Tarefas() {
     // Constructor implementation
-    tarefa* head = nullptr;
+    head = nullptr;
 }
 
 void Tarefas::adicionarTarefa(int id, int prioridade, const char* descricao){
@@ -14,7 +14,10 @@ void Tarefas::adicionarTarefa(int id, int prioridade, const char* descricao){
    novatarefa->id = id;
    novatarefa->prioridade = prioridade;
    novatarefa->next = nullptr;
-    std::strncpy(novatarefa->descricao, descricao, 100);
+
+   
+    std::strncpy(novatarefa->descricao, descricao, sizeof(novatarefa->descricao)-1);
+    novatarefa->descricao[sizeof(novatarefa->descricao) - 1] = '\0';
 
     if(head == nullptr){
         head = novatarefa;
