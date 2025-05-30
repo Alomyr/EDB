@@ -1,5 +1,4 @@
 #include "Tarefa.hpp"
-#include <complex>
 #include <cstring>
 #include <iostream>
 
