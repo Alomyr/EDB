@@ -39,6 +39,9 @@ void Tarefas::listarTarefas()const{
     }
 
 }
+
+
+
 Tarefas::~Tarefas(){
     
     tarefa* atual = head;
